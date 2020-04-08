@@ -4,14 +4,11 @@ import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 import rootReducer from "./reducers";
 import Application from "./components/Application";
+import configureStore from "./stores";
 //import logo from './logo.svg';
 //import './App.css';
 
-const store = createStore(
-  rootReducer,
-  applyMiddleware(thunk),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-);
+const store = configureStore();
 
 function App() {
   return (
